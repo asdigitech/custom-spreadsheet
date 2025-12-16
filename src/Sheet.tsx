@@ -221,13 +221,13 @@ export default function CustomSpreadsheet() {
     <div className="p-6 space-y-4">
       <div className="flex flex-col gap-2">
         {/* File info */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between flex-col-reverse md:flex-row">
           <div>
             <p className="text-sm font-medium">File: {currentFileName}.xlsx</p>
             <p className="text-xs text-gray-500">{autoSaveStatus}</p>
           </div>
 
-          <div className="flex gap-5">
+          <div className="flex gap-5 mt-4 mb-4 md:mb-0 md:mt-0">
             <button onClick={saveFile} className="btn cursor-pointer">
               💾 Save file
             </button>
@@ -269,7 +269,7 @@ export default function CustomSpreadsheet() {
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
 
-      <div className="overflow-auto rounded">
+      <div className="w-290 relative overflow-x-auto md:w-auto h-auto rounded">
         <table className="border-collapse select-none mb-2">
           <thead>
             <tr>
@@ -341,7 +341,7 @@ export default function CustomSpreadsheet() {
             ))}
           </tbody>
         </table>
-        <span className="text-gray-400 text-xs">
+        <span className="text-gray-400 md:text-xs text-[8px]">
           &copy; 2025 Custom Spreadsheet. All rights reserved. Product by AS
           DigiTech
         </span>
